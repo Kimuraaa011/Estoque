@@ -1,10 +1,12 @@
 <?php
 
-require '../../config.php';
-require '../models/CategoryDbMysql.php';
+session_start();
 
-$category = new CategoryDbMysql($pdo);
-$lista = $category->findAll();
+require_once '../../config.php';
+require_once '../models/CategoryDbMysql.php';
+
+$categoria = new CategoriaDbMysql($pdo);
+$lista = $categoria->findAll();
 
 ?>
 
@@ -34,9 +36,21 @@ $lista = $category->findAll();
         <input type="text" class="add" name="price">
       </label> <br> <br>
       <label>
+        Cor: <br>
+        <input type="text" class="add" name="cor">
+      </label> <br> <br>
         Quantidade em estoque: <br>
         <input type="text" class="add" name="estoque">
       </label> <br> <br>
+      <label>
+        Tamanho: <br>
+        <select name="tamanho">
+          <option value="U">U - Único</option>
+          <option value="P">P - Pequeno</option>
+          <option value="M">M - Médio</option>
+          <option value="G">G - Grande</option>
+          <option value="GG">GG - Extra Grande</option>          
+        </select> <br> <br>
       <label>
         Categoria: <br>
         <select name="categoria">
@@ -45,9 +59,16 @@ $lista = $category->findAll();
           <?php endforeach; ?>
         </select>
       </label> <br> <br>
-      <input type="submit" placeholder="Enviar">
+      <input type="submit" placeholder="Enviar"> <br> <br>
 
     </form>
+    <?php 
+    
+      if(isset($_SESSION['addProductWarn'])){
+        echo '<h3 style="color: red;">' . $_SESSION['addProductWarn'] . '</h3>';
+        $_SESSION['addProductWarn'] = '';
+      } 
+    ?>
   </div>
 
 </body>

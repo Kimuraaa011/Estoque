@@ -1,14 +1,14 @@
 <?php
 
 require 'config.php';
-require 'assets/models/UserDbMysql.php';
+require 'assets/models/ProductDbMysql.php';
 
 
-$userDb = new UserDbMysql($pdo);
-$users = $userDb->findAll();
+$productDb = new ProductDbMysql($pdo);
+$products = $productDb->findAll();
 
-foreach($users as $user){
-  echo $user->getNome() . '<br>';
+foreach($products as $product){
+  echo $product->getNome() . '<br>';
   
 
 }

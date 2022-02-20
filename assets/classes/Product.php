@@ -1,12 +1,14 @@
 <?php
 
-require '../classes/Category.php';
+
 
 
 class Product{
   private $id;
   private $nome;
   private $price; 
+  private $cor;
+  private $tamanho;
   private $estoque;
   private $categoria;
 
@@ -51,14 +53,29 @@ class Product{
     $this->categoria = $c;
   }
 
+  public function getCor(){
+    return $this->cor;
+  }
+
+  public function setCor($c){
+    $this->cor = $c;
+  }
+
+  public function getTamanho(){
+    return $this->tamanho;
+  }
+
+  public function setTamanho($t){
+    $this->tamanho = $t;
+  }
+
 
 }
 
 
 interface ProductDb{
-  public function addProduct(Product $p, Category $c);
-  public function updateProduct(Product $p, Category $c);
-  public function deleteProduct($id);
+  public function addProduct(Product $p);
+  public function updateProduct(Product $p);
   public function findProductById($id);
   public function findAll();
 

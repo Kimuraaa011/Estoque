@@ -16,8 +16,10 @@
     <div class="left_side">
        <a href="#" class='option'>Histórico de vendas</a>
        <a href="assets/action/addClient.php" class='option'>Adicionar cliente</a>
+       <a href="assets/action/details.php" class='option'>Visualizar clientes</a>
        <a href="#" class='option'>Adicionar venda</a>
        <a href="assets/action/addProduct.php" class='option'>Adicionar Produto</a>
+       <a href="assets/action/productDetails.php" class='option'>Visualizar Produtos</a>
        <a href="#" class='option'>Visualizar Gastos</a>
 
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 
-class Category{
+class Categoria{
   private $id;
   private $nome;
 
@@ -21,6 +21,8 @@ class Category{
   
 }
 
-interface CategoryDb{
+interface CategoriaDb{
   public function findAll();
+  public function findById($id);
+
 }
